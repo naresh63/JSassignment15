@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 15</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1.
+      function nextEdge(side1, side2) {
+        return side1 + side2 - 1;
+      }
+      console.log(nextEdge(8, 10));
+
+      // 2.
+      const rightshift = (x, y) => {
+        let a = Math.floor(x / Math.pow(2, y));
+        return a;
+      };
+
+      console.log(rightshift(80, 3));
+
+      // 3.
+      function evalute(b, m) {
+        let x = m;
+        let e = 2.718;
+        let result = x ^ (b + x * (e ^ (b * m)));
+        return result;
+      }
+      console.log("evalate=", evalute(2, 3));
+
+      // 4.
+      function triangular_series(n) {
+        let i,
+          j = 1,
+          k = 1;
+
+        for (i = 1; i <= n; i++) {
+          document.write(k + " ");
+          j = j + 1; // Increasing j by 1
+          k = k + j; // Add value of j into k and update k
+        }
+      }
+      // Driven Function
+      let n = 5;
+      triangular_series(n);
+
+      // 5.
+      const changeEnough = (arr, bill) => {
+        let quarter = arr[0] * 0.25;
+        let dime = arr[1] * 0.1;
+        let nickel = arr[2] * 0.05;
+        let penny = arr[3] * 0.01;
+        if (quarter + dime + nickel + penny >= bill) {
+          return true;
+        } else return false;
+      };
+
+      console.log(changeEnough([2, 100, 0, 0], 14.11));
+    </script>
+  </body>
+</html>
